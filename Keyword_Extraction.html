@@ -285,7 +285,7 @@
       
       
       
-      <li><a href="Keyword_Extraction.ipynb" target="_blank"
+      <li><a href="_sources/Keyword_Extraction.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -391,7 +391,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p>Tugas 7 - Keyword Extraction Menggunakan Centrality</p>
+  <p><strong>Tugas 7 - Keyword Extraction Menggunakan Centrality</strong></p>
 <p>Nama : Isnita Widyur Rahmah
 NIM : 220411100048
 Kelas : IF 7A</p>
@@ -399,55 +399,33 @@ Kelas : IF 7A</p>
 <p>##Install Pustaka Python</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>networkx<span class="w"> </span>nltk<span class="w"> </span>tqdm<span class="w"> </span>pandas<span class="w"> </span>sklearn<span class="w"> </span>request<span class="w"> </span>beautifulsoup4
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>nltk<span class="w"> </span>pandas<span class="w"> </span>requests<span class="w"> </span>beautifulsoup4
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: networkx in c:\users\isnita\appdata\local\programs\python\python310\lib\site-packages (3.3)
-Requirement already satisfied: nltk in c:\users\isnita\appdata\local\programs\python\python310\lib\site-packages (3.8.1)
-Requirement already satisfied: tqdm in c:\users\isnita\appdata\local\programs\python\python310\lib\site-packages (4.66.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: nltk in c:\users\isnita\appdata\local\programs\python\python310\lib\site-packages (3.8.1)
 Requirement already satisfied: pandas in c:\users\isnita\appdata\local\programs\python\python310\lib\site-packages (2.0.3)
-Collecting sklearn
-  Using cached sklearn-0.0.post12.tar.gz (2.6 kB)
-  Preparing metadata (setup.py): started
-  Preparing metadata (setup.py): finished with status &#39;error&#39;
+Requirement already satisfied: requests in c:\users\isnita\appdata\local\programs\python\python310\lib\site-packages (2.31.0)
+Requirement already satisfied: beautifulsoup4 in c:\users\isnita\appdata\local\programs\python\python310\lib\site-packages (4.12.3)
+Requirement already satisfied: regex&gt;=2021.8.3 in c:\users\isnita\appdata\local\programs\python\python310\lib\site-packages (from nltk) (2024.4.16)
+Requirement already satisfied: tqdm in c:\users\isnita\appdata\local\programs\python\python310\lib\site-packages (from nltk) (4.66.2)
+Requirement already satisfied: joblib in c:\users\isnita\appdata\local\programs\python\python310\lib\site-packages (from nltk) (1.4.0)
+Requirement already satisfied: click in c:\users\isnita\appdata\local\programs\python\python310\lib\site-packages (from nltk) (8.1.7)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in c:\users\isnita\appdata\roaming\python\python310\site-packages (from pandas) (2.8.2)
+Requirement already satisfied: numpy&gt;=1.21.0 in c:\users\isnita\appdata\local\programs\python\python310\lib\site-packages (from pandas) (1.25.2)
+Requirement already satisfied: pytz&gt;=2020.1 in c:\users\isnita\appdata\local\programs\python\python310\lib\site-packages (from pandas) (2023.3)
+Requirement already satisfied: tzdata&gt;=2022.1 in c:\users\isnita\appdata\local\programs\python\python310\lib\site-packages (from pandas) (2023.3)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in c:\users\isnita\appdata\local\programs\python\python310\lib\site-packages (from requests) (2.0.4)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in c:\users\isnita\appdata\local\programs\python\python310\lib\site-packages (from requests) (3.4)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in c:\users\isnita\appdata\local\programs\python\python310\lib\site-packages (from requests) (3.3.2)
+Requirement already satisfied: certifi&gt;=2017.4.17 in c:\users\isnita\appdata\local\programs\python\python310\lib\site-packages (from requests) (2023.7.22)
+Requirement already satisfied: soupsieve&gt;1.2 in c:\users\isnita\appdata\local\programs\python\python310\lib\site-packages (from beautifulsoup4) (2.6)
+Requirement already satisfied: six&gt;=1.5 in c:\users\isnita\appdata\roaming\python\python310\site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.16.0)
+Requirement already satisfied: colorama in c:\users\isnita\appdata\local\programs\python\python310\lib\site-packages (from click-&gt;nltk) (0.4.6)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  error: subprocess-exited-with-error
-  
-  python setup.py egg_info did not run successfully.
-  exit code: 1
-  
-  [15 lines of output]
-  The &#39;sklearn&#39; PyPI package is deprecated, use &#39;scikit-learn&#39;
-  rather than &#39;sklearn&#39; for pip commands.
-  
-  Here is how to fix this error in the main use cases:
-  - use &#39;pip install scikit-learn&#39; rather than &#39;pip install sklearn&#39;
-  - replace &#39;sklearn&#39; by &#39;scikit-learn&#39; in your pip requirements files
-    (requirements.txt, setup.py, setup.cfg, Pipfile, etc ...)
-  - if the &#39;sklearn&#39; package is used by one of your dependencies,
-    it would be great if you take some time to track which package uses
-    &#39;sklearn&#39; instead of &#39;scikit-learn&#39; and report it to their issue tracker
-  - as a last resort, set the environment variable
-    SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL=True to avoid this error
-  
-  More information is available at
-  https://github.com/scikit-learn/sklearn-pypi-package
-  [end of output]
-  
-  note: This error originates from a subprocess, and is likely not a problem with pip.
-error: metadata-generation-failed
-
-Encountered error while generating package metadata.
-
-See above for output.
-
-note: This is an issue with the package mentioned above, not pip.
-hint: See above for details.
-
-[notice] A new release of pip available: 22.2.1 -&gt; 24.2
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[notice] A new release of pip available: 22.2.1 -&gt; 24.2
 [notice] To update, run: python.exe -m pip install --upgrade pip
 </pre></div>
 </div>
@@ -460,12 +438,7 @@ hint: See above for details.
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
-
-<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
 <span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
-
-<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
 
 <span class="kn">import</span> <span class="nn">nltk</span>
 <span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
@@ -473,9 +446,6 @@ hint: See above for details.
 <span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;punkt&#39;</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">sent_tokenize</span> <span class="p">,</span> <span class="n">word_tokenize</span>
 <span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
-
-<span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="kn">import</span> <span class="n">cosine_similarity</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">preprocessing</span>
 </pre></div>
 </div>
 </div>
@@ -600,7 +570,7 @@ mengubah semua teks dalam kolom Isi menjadi huruf kecil dan menyimpannya dalam k
   <tbody>
     <tr>
       <th>0</th>
-      <td>menteri esdm bahlil lahadalia mengungkap 54 pe...</td>
+      <td>timnas indonesia akan menghadapi bahrain dalam...</td>
     </tr>
   </tbody>
 </table>
@@ -649,7 +619,7 @@ membersihkan teks dari tanda baca dan angka, serta menghapus karakter yang tidak
   <tbody>
     <tr>
       <th>0</th>
-      <td>menteri esdm bahlil lahadalia mengungkap perse...</td>
+      <td>timnas indonesia akan menghadapi bahrain dalam...</td>
     </tr>
   </tbody>
 </table>
@@ -696,7 +666,7 @@ melakukan normalisasi spasi dalam teks dengan mengganti beberapa spasi berturut-
   <tbody>
     <tr>
       <th>0</th>
-      <td>menteri esdm bahlil lahadalia mengungkap perse...</td>
+      <td>timnas indonesia akan menghadapi bahrain dalam...</td>
     </tr>
   </tbody>
 </table>
@@ -742,7 +712,7 @@ melakukan tokenisasi pada teks yang telah dinormalisasi, memecahnya menjadi daft
   <tbody>
     <tr>
       <th>0</th>
-      <td>[menteri, esdm, bahlil, lahadalia, mengungkap,...</td>
+      <td>[timnas, indonesia, akan, menghadapi, bahrain,...</td>
     </tr>
   </tbody>
 </table>
@@ -790,7 +760,7 @@ membersihkan daftar token dari kata-kata umum yang tidak memberikan makna pentin
   <tbody>
     <tr>
       <th>0</th>
-      <td>[menteri, esdm, bahlil, lahadalia, mengungkap,...</td>
+      <td>[timnas, indonesia, menghadapi, bahrain, laga,...</td>
     </tr>
   </tbody>
 </table>
@@ -809,7 +779,7 @@ menggabungkan kembali daftar token yang telah dibersihkan menjadi string utuh, y
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: &#39;menteri esdm bahlil lahadalia mengungkap persen warga sulawesi terjangkit infeksi saluran pernapasan akut ispa imbas kebijakan hilirisasi . berdasarkan kajian pt indonesia morowali industrial park imip pt indonesia weda bay industrial park iwip . informasi disertasi kajian akademiknya . bahlil mengungkap hilirisasi dampak positif perekonomian . dampak kesehatan buruk . advertisement scroll to continue with content kegiatan ekonomi kesehatan buruk . kesehatan ispa sulawesi morowali persen kena asma sidang doktor gedung makara art ui rabu . menurutnya kesehatan muncul imbas kondisi air udara buruk . proses hilirisasi kali morowali memiliki konsep . berbeda weda bay hijau . proses hilirisasi morowali contoh perbaikan . halmahera air morowali ampun . morowali barang . hasil kajian dampak ekonomi kebijakan hilirisasi penduduk lingkar pertambangan . penghasilan tembus rp juta rp juta . karyawan smelter memaksimalkan ruang ekonomi membangun bisnis kos kosan makanan pungkasnya . gambas video cnn&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: &#39;timnas indonesia menghadapi bahrain laga kualifikasi piala dunia maret . laga momen krusial perebutan tiket piala dunia . duel timnas indonesia vs bahrain dijadwalkan maret . duel matchday ketujuh alias masuk matchday babak ketiga kualifikasi piala dunia . kondisi indonesia vs bahrain momen krusial tim . tim menjaga peluang lolos piala dunia perebutan terjaga . advertisement scroll to continue with content berkaca kondisi klasemen grup c kualifikasi piala dunia zona asia pertarungan perebutan posisi klasemen ketat . tim tertinggal perebutan posisi peluang finis posisi diyakini terbuka lebar . bahrain perubahan lokasi venue laga timnas indonesia vs bahrain indonesia kerugian skuad garuda . bahrain perubahan lokasi pertandingan alasan keselamatan pemain . mengecam serangan serangan media sosial dilancarkan penggemar timnas indonesia . kekecewaan penggemar timnas indonesia tumpah lantaran insiden kontroversial bahrain vs indonesia . bahrain mencetak gol menit kesembilan injury time injury time ditetapkan enam menit . sejalan asosiasi sepak bola bahrain keselamatan anggotanya anggota tim nasional asosiasi proses menghubungi fifa afc perilaku diterima asosiasi sepak bola bahrain ancaman hinaan pencemaran nama mempengaruhi keselamatan anggota tim nasional bertanding kota jakarta . asosiasi mengajukan permintaan pemindahan pertandingan indonesia menjaga keselamatan pemain tim nasional tulis asosiasi sepak bola bahrain bfa pernyataannya . gambas video cnn&#39;}
 </pre></div>
 </div>
 </div>
@@ -835,29 +805,8 @@ menyiapkan data untuk analisis lebih lanjut dengan membuat kumpulan kalimat dari
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;menteri esdm bahlil lahadalia mengungkap persen warga sulawesi terjangkit infeksi saluran pernapasan akut ispa imbas kebijakan hilirisasi .&#39;, &#39;berdasarkan kajian pt indonesia morowali industrial park imip pt indonesia weda bay industrial park iwip .&#39;, &#39;informasi disertasi kajian akademiknya .&#39;, &#39;bahlil mengungkap hilirisasi dampak positif perekonomian .&#39;, &#39;dampak kesehatan buruk .&#39;, &#39;advertisement scroll to continue with content kegiatan ekonomi kesehatan buruk .&#39;, &#39;kesehatan ispa sulawesi morowali persen kena asma sidang doktor gedung makara art ui rabu .&#39;, &#39;menurutnya kesehatan muncul imbas kondisi air udara buruk .&#39;, &#39;proses hilirisasi kali morowali memiliki konsep .&#39;, &#39;berbeda weda bay hijau .&#39;, &#39;proses hilirisasi morowali contoh perbaikan .&#39;, &#39;halmahera air morowali ampun .&#39;, &#39;morowali barang .&#39;, &#39;hasil kajian dampak ekonomi kebijakan hilirisasi penduduk lingkar pertambangan .&#39;, &#39;penghasilan tembus rp juta rp juta .&#39;, &#39;karyawan smelter memaksimalkan ruang ekonomi membangun bisnis kos kosan makanan pungkasnya .&#39;, &#39;gambas video cnn&#39;]
-{&#39;kegiatan&#39;, &#39;berbeda&#39;, &#39;scroll&#39;, &#39;hasil&#39;, &#39;berdasarkan&#39;, &#39;ispa&#39;, &#39;asma&#39;, &#39;cnn&#39;, &#39;with&#39;, &#39;rabu&#39;, &#39;saluran&#39;, &#39;video&#39;, &#39;muncul&#39;, &#39;ampun&#39;, &#39;kena&#39;, &#39;halmahera&#39;, &#39;bisnis&#39;, &#39;menteri&#39;, &#39;morowali&#39;, &#39;memiliki&#39;, &#39;rp&#39;, &#39;membangun&#39;, &#39;bahlil&#39;, &#39;advertisement&#39;, &#39;penduduk&#39;, &#39;content&#39;, &#39;makanan&#39;, &#39;indonesia&#39;, &#39;mengungkap&#39;, &#39;terjangkit&#39;, &#39;imbas&#39;, &#39;kali&#39;, &#39;juta&#39;, &#39;kajian&#39;, &#39;pungkasnya&#39;, &#39;positif&#39;, &#39;sidang&#39;, &#39;kosan&#39;, &#39;memaksimalkan&#39;, &#39;disertasi&#39;, &#39;industrial&#39;, &#39;weda&#39;, &#39;warga&#39;, &#39;lahadalia&#39;, &#39;udara&#39;, &#39;hilirisasi&#39;, &#39;.&#39;, &#39;tembus&#39;, &#39;makara&#39;, &#39;gambas&#39;, &#39;konsep&#39;, &#39;informasi&#39;, &#39;continue&#39;, &#39;esdm&#39;, &#39;doktor&#39;, &#39;pernapasan&#39;, &#39;art&#39;, &#39;smelter&#39;, &#39;barang&#39;, &#39;ruang&#39;, &#39;contoh&#39;, &#39;buruk&#39;, &#39;proses&#39;, &#39;kebijakan&#39;, &#39;karyawan&#39;, &#39;dampak&#39;, &#39;air&#39;, &#39;bay&#39;, &#39;pt&#39;, &#39;gedung&#39;, &#39;infeksi&#39;, &#39;sulawesi&#39;, &#39;imip&#39;, &#39;perekonomian&#39;, &#39;persen&#39;, &#39;hijau&#39;, &#39;lingkar&#39;, &#39;perbaikan&#39;, &#39;penghasilan&#39;, &#39;kos&#39;, &#39;kesehatan&#39;, &#39;kondisi&#39;, &#39;ui&#39;, &#39;iwip&#39;, &#39;pertambangan&#39;, &#39;ekonomi&#39;, &#39;park&#39;, &#39;to&#39;, &#39;menurutnya&#39;, &#39;akut&#39;, &#39;akademiknya&#39;}
-</pre></div>
-</div>
-</div>
-</div>
-<p>#Fungsi untuk Menghitung Frekuensi Kata dalam Kalimat
-menghasilkan representasi frekuensi kata dalam bentuk DataFrame, yang berguna untuk analisis teks lebih lanjut, seperti pembelajaran mesin atau analisis statistik.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vektor_kata</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-	<span class="n">vektor_kata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)),</span> <span class="n">columns</span><span class="o">=</span><span class="n">vocabulary</span><span class="p">)</span>
-
-	<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">sent</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-		<span class="c1"># Tokenisasi kalimat menjadi kata-kata</span>
-		<span class="n">kata_kalimat</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">sent</span><span class="p">)</span>
-
-		<span class="c1"># Hitung frekuensi setiap kata dalam kalimat</span>
-		<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">kata_kalimat</span><span class="p">:</span>
-			<span class="k">if</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">vocabulary</span><span class="p">:</span>
-				<span class="n">vektor_kata</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">word</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
-
-	<span class="k">return</span> <span class="n">vektor_kata</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;timnas indonesia menghadapi bahrain laga kualifikasi piala dunia maret .&#39;, &#39;laga momen krusial perebutan tiket piala dunia .&#39;, &#39;duel timnas indonesia vs bahrain dijadwalkan maret .&#39;, &#39;duel matchday ketujuh alias masuk matchday babak ketiga kualifikasi piala dunia .&#39;, &#39;kondisi indonesia vs bahrain momen krusial tim .&#39;, &#39;tim menjaga peluang lolos piala dunia perebutan terjaga .&#39;, &#39;advertisement scroll to continue with content berkaca kondisi klasemen grup c kualifikasi piala dunia zona asia pertarungan perebutan posisi klasemen ketat .&#39;, &#39;tim tertinggal perebutan posisi peluang finis posisi diyakini terbuka lebar .&#39;, &#39;bahrain perubahan lokasi venue laga timnas indonesia vs bahrain indonesia kerugian skuad garuda .&#39;, &#39;bahrain perubahan lokasi pertandingan alasan keselamatan pemain .&#39;, &#39;mengecam serangan serangan media sosial dilancarkan penggemar timnas indonesia .&#39;, &#39;kekecewaan penggemar timnas indonesia tumpah lantaran insiden kontroversial bahrain vs indonesia .&#39;, &#39;bahrain mencetak gol menit kesembilan injury time injury time ditetapkan enam menit .&#39;, &#39;sejalan asosiasi sepak bola bahrain keselamatan anggotanya anggota tim nasional asosiasi proses menghubungi fifa afc perilaku diterima asosiasi sepak bola bahrain ancaman hinaan pencemaran nama mempengaruhi keselamatan anggota tim nasional bertanding kota jakarta .&#39;, &#39;asosiasi mengajukan permintaan pemindahan pertandingan indonesia menjaga keselamatan pemain tim nasional tulis asosiasi sepak bola bahrain bfa pernyataannya .&#39;, &#39;gambas video cnn&#39;]
+{&#39;ketat&#39;, &#39;kualifikasi&#39;, &#39;pertarungan&#39;, &#39;kerugian&#39;, &#39;ketujuh&#39;, &#39;keselamatan&#39;, &#39;sepak&#39;, &#39;pemain&#39;, &#39;c&#39;, &#39;gambas&#39;, &#39;garuda&#39;, &#39;timnas&#39;, &#39;peluang&#39;, &#39;time&#39;, &#39;insiden&#39;, &#39;asia&#39;, &#39;tumpah&#39;, &#39;video&#39;, &#39;finis&#39;, &#39;perubahan&#39;, &#39;grup&#39;, &#39;dijadwalkan&#39;, &#39;kota&#39;, &#39;diyakini&#39;, &#39;pencemaran&#39;, &#39;advertisement&#39;, &#39;serangan&#39;, &#39;.&#39;, &#39;kesembilan&#39;, &#39;anggota&#39;, &#39;ditetapkan&#39;, &#39;with&#39;, &#39;venue&#39;, &#39;bertanding&#39;, &#39;menghadapi&#39;, &#39;pernyataannya&#39;, &#39;perilaku&#39;, &#39;terbuka&#39;, &#39;injury&#39;, &#39;mengajukan&#39;, &#39;content&#39;, &#39;alasan&#39;, &#39;posisi&#39;, &#39;lokasi&#39;, &#39;scroll&#39;, &#39;bola&#39;, &#39;menit&#39;, &#39;tim&#39;, &#39;media&#39;, &#39;cnn&#39;, &#39;anggotanya&#39;, &#39;hinaan&#39;, &#39;bfa&#39;, &#39;tiket&#39;, &#39;proses&#39;, &#39;berkaca&#39;, &#39;permintaan&#39;, &#39;indonesia&#39;, &#39;tertinggal&#39;, &#39;dunia&#39;, &#39;fifa&#39;, &#39;perebutan&#39;, &#39;kondisi&#39;, &#39;gol&#39;, &#39;lantaran&#39;, &#39;piala&#39;, &#39;mempengaruhi&#39;, &#39;ancaman&#39;, &#39;momen&#39;, &#39;jakarta&#39;, &#39;vs&#39;, &#39;menghubungi&#39;, &#39;klasemen&#39;, &#39;kontroversial&#39;, &#39;zona&#39;, &#39;menjaga&#39;, &#39;terjaga&#39;, &#39;pemindahan&#39;, &#39;ketiga&#39;, &#39;sejalan&#39;, &#39;tulis&#39;, &#39;penggemar&#39;, &#39;bahrain&#39;, &#39;sosial&#39;, &#39;babak&#39;, &#39;duel&#39;, &#39;lolos&#39;, &#39;skuad&#39;, &#39;continue&#39;, &#39;enam&#39;, &#39;alias&#39;, &#39;mengecam&#39;, &#39;masuk&#39;, &#39;pertandingan&#39;, &#39;afc&#39;, &#39;krusial&#39;, &#39;dilancarkan&#39;, &#39;nama&#39;, &#39;to&#39;, &#39;diterima&#39;, &#39;matchday&#39;, &#39;laga&#39;, &#39;asosiasi&#39;, &#39;kekecewaan&#39;, &#39;nasional&#39;, &#39;maret&#39;, &#39;mencetak&#39;, &#39;lebar&#39;}
 </pre></div>
 </div>
 </div>
@@ -884,7 +833,7 @@ mengonversi kumpulan kalimat menjadi representasi vektor frekuensi kata dalam be
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-e028d4b4-fc5f-4f56-889e-61257b828f70" class="colab-df-container">
+  <div id="df-763f5cc2-ecd8-4a69-8afa-58064d2cd547" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -903,38 +852,38 @@ mengonversi kumpulan kalimat menjadi representasi vektor frekuensi kata dalam be
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>kegiatan</th>
-      <th>berbeda</th>
-      <th>scroll</th>
-      <th>hasil</th>
-      <th>berdasarkan</th>
-      <th>ispa</th>
-      <th>asma</th>
-      <th>cnn</th>
-      <th>with</th>
-      <th>rabu</th>
+      <th>ketat</th>
+      <th>kualifikasi</th>
+      <th>pertarungan</th>
+      <th>kerugian</th>
+      <th>ketujuh</th>
+      <th>keselamatan</th>
+      <th>sepak</th>
+      <th>pemain</th>
+      <th>c</th>
+      <th>gambas</th>
       <th>...</th>
-      <th>kondisi</th>
-      <th>ui</th>
-      <th>iwip</th>
-      <th>pertambangan</th>
-      <th>ekonomi</th>
-      <th>park</th>
       <th>to</th>
-      <th>menurutnya</th>
-      <th>akut</th>
-      <th>akademiknya</th>
+      <th>diterima</th>
+      <th>matchday</th>
+      <th>laga</th>
+      <th>asosiasi</th>
+      <th>kekecewaan</th>
+      <th>nasional</th>
+      <th>maret</th>
+      <th>mencetak</th>
+      <th>lebar</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>menteri esdm bahlil lahadalia mengungkap persen warga sulawesi terjangkit infeksi saluran pernapasan akut ispa imbas kebijakan hilirisasi .</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <th>timnas indonesia menghadapi bahrain laga kualifikasi piala dunia maret .</th>
       <td>0</td>
       <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -943,18 +892,66 @@ mengonversi kumpulan kalimat menjadi representasi vektor frekuensi kata dalam be
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <td>1</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>1</td>
+      <td>0</td>
       <td>0</td>
     </tr>
     <tr>
-      <th>berdasarkan kajian pt indonesia morowali industrial park imip pt indonesia weda bay industrial park iwip .</th>
+      <th>laga momen krusial perebutan tiket piala dunia .</th>
       <td>0</td>
       <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>duel timnas indonesia vs bahrain dijadwalkan maret .</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>duel matchday ketujuh alias masuk matchday babak ketiga kualifikasi piala dunia .</th>
+      <td>0</td>
+      <td>1</td>
       <td>0</td>
       <td>0</td>
       <td>1</td>
@@ -964,9 +961,6 @@ mengonversi kumpulan kalimat menjadi representasi vektor frekuensi kata dalam be
       <td>0</td>
       <td>0</td>
       <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
       <td>0</td>
       <td>0</td>
       <td>2</td>
@@ -974,33 +968,12 @@ mengonversi kumpulan kalimat menjadi representasi vektor frekuensi kata dalam be
       <td>0</td>
       <td>0</td>
       <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>informasi disertasi kajian akademiknya .</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>bahlil mengungkap hilirisasi dampak positif perekonomian .</th>
+      <th>kondisi indonesia vs bahrain momen krusial tim .</th>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -1024,7 +997,7 @@ mengonversi kumpulan kalimat menjadi representasi vektor frekuensi kata dalam be
       <td>0</td>
     </tr>
     <tr>
-      <th>dampak kesehatan buruk .</th>
+      <th>tim menjaga peluang lolos piala dunia perebutan terjaga .</th>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -1048,9 +1021,9 @@ mengonversi kumpulan kalimat menjadi representasi vektor frekuensi kata dalam be
       <td>0</td>
     </tr>
     <tr>
-      <th>advertisement scroll to continue with content kegiatan ekonomi kesehatan buruk .</th>
+      <th>advertisement scroll to continue with content berkaca kondisi klasemen grup c kualifikasi piala dunia zona asia pertarungan perebutan posisi klasemen ketat .</th>
       <td>1</td>
-      <td>0</td>
+      <td>1</td>
       <td>1</td>
       <td>0</td>
       <td>0</td>
@@ -1060,32 +1033,8 @@ mengonversi kumpulan kalimat menjadi representasi vektor frekuensi kata dalam be
       <td>1</td>
       <td>0</td>
       <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>1</td>
       <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>kesehatan ispa sulawesi morowali persen kena asma sidang doktor gedung makara art ui rabu .</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>...</td>
-      <td>0</td>
-      <td>1</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -1096,31 +1045,7 @@ mengonversi kumpulan kalimat menjadi representasi vektor frekuensi kata dalam be
       <td>0</td>
     </tr>
     <tr>
-      <th>menurutnya kesehatan muncul imbas kondisi air udara buruk .</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>proses hilirisasi kali morowali memiliki konsep .</th>
+      <th>tim tertinggal perebutan posisi peluang finis posisi diyakini terbuka lebar .</th>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -1141,10 +1066,12 @@ mengonversi kumpulan kalimat menjadi representasi vektor frekuensi kata dalam be
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
-      <th>berbeda weda bay hijau .</th>
+      <th>bahrain perubahan lokasi venue laga timnas indonesia vs bahrain indonesia kerugian skuad garuda .</th>
+      <td>0</td>
+      <td>0</td>
       <td>0</td>
       <td>1</td>
       <td>0</td>
@@ -1153,6 +1080,28 @@ mengonversi kumpulan kalimat menjadi representasi vektor frekuensi kata dalam be
       <td>0</td>
       <td>0</td>
       <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>bahrain perubahan lokasi pertandingan alasan keselamatan pemain .</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
       <td>0</td>
       <td>0</td>
       <td>...</td>
@@ -1168,7 +1117,7 @@ mengonversi kumpulan kalimat menjadi representasi vektor frekuensi kata dalam be
       <td>0</td>
     </tr>
     <tr>
-      <th>proses hilirisasi morowali contoh perbaikan .</th>
+      <th>mengecam serangan serangan media sosial dilancarkan penggemar timnas indonesia .</th>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -1192,7 +1141,7 @@ mengonversi kumpulan kalimat menjadi representasi vektor frekuensi kata dalam be
       <td>0</td>
     </tr>
     <tr>
-      <th>halmahera air morowali ampun .</th>
+      <th>kekecewaan penggemar timnas indonesia tumpah lantaran insiden kontroversial bahrain vs indonesia .</th>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -1206,41 +1155,6 @@ mengonversi kumpulan kalimat menjadi representasi vektor frekuensi kata dalam be
       <td>...</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>morowali barang .</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>hasil kajian dampak ekonomi kebijakan hilirisasi penduduk lingkar pertambangan .</th>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -1249,64 +1163,75 @@ mengonversi kumpulan kalimat menjadi representasi vektor frekuensi kata dalam be
       <td>0</td>
       <td>0</td>
       <td>0</td>
+    </tr>
+    <tr>
+      <th>bahrain mencetak gol menit kesembilan injury time injury time ditetapkan enam menit .</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>...</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>sejalan asosiasi sepak bola bahrain keselamatan anggotanya anggota tim nasional asosiasi proses menghubungi fifa afc perilaku diterima asosiasi sepak bola bahrain ancaman hinaan pencemaran nama mempengaruhi keselamatan anggota tim nasional bertanding kota jakarta .</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
       <td>1</td>
       <td>0</td>
       <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>2</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
     </tr>
     <tr>
-      <th>penghasilan tembus rp juta rp juta .</th>
+      <th>asosiasi mengajukan permintaan pemindahan pertandingan indonesia menjaga keselamatan pemain tim nasional tulis asosiasi sepak bola bahrain bfa pernyataannya .</th>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>karyawan smelter memaksimalkan ruang ekonomi membangun bisnis kos kosan makanan pungkasnya .</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>1</td>
+      <td>1</td>
+      <td>1</td>
       <td>0</td>
       <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -1320,9 +1245,9 @@ mengonversi kumpulan kalimat menjadi representasi vektor frekuensi kata dalam be
       <td>0</td>
       <td>0</td>
       <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>1</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
       <td>0</td>
       <td>0</td>
@@ -1337,12 +1262,12 @@ mengonversi kumpulan kalimat menjadi representasi vektor frekuensi kata dalam be
     </tr>
   </tbody>
 </table>
-<p>17 rows × 91 columns</p>
+<p>16 rows × 108 columns</p>
 </div>
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-e028d4b4-fc5f-4f56-889e-61257b828f70')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-763f5cc2-ecd8-4a69-8afa-58064d2cd547')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -1394,12 +1319,12 @@ mengonversi kumpulan kalimat menjadi representasi vektor frekuensi kata dalam be
 
     <script>
       const buttonEl =
-        document.querySelector('#df-e028d4b4-fc5f-4f56-889e-61257b828f70 button.colab-df-convert');
+        document.querySelector('#df-763f5cc2-ecd8-4a69-8afa-58064d2cd547 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-e028d4b4-fc5f-4f56-889e-61257b828f70');
+        const element = document.querySelector('#df-763f5cc2-ecd8-4a69-8afa-58064d2cd547');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1419,8 +1344,8 @@ mengonversi kumpulan kalimat menjadi representasi vektor frekuensi kata dalam be
   </div>
 
 
-<div id="df-7172684b-4622-43f6-a07d-85d452a72143">
-  <button class="colab-df-quickchart" onclick="quickchart('df-7172684b-4622-43f6-a07d-85d452a72143')"
+<div id="df-5923e6f6-018f-4e4c-9eba-5f220db623f2">
+  <button class="colab-df-quickchart" onclick="quickchart('df-5923e6f6-018f-4e4c-9eba-5f220db623f2')"
             title="Suggest charts"
             style="display:none;">
 
@@ -1539,14 +1464,14 @@ mengonversi kumpulan kalimat menjadi representasi vektor frekuensi kata dalam be
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-7172684b-4622-43f6-a07d-85d452a72143 button');
+        document.querySelector('#df-5923e6f6-018f-4e4c-9eba-5f220db623f2 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
 
-  <div id="id_b97070f6-8d44-4933-9498-69565eb897de">
+  <div id="id_4b2ba5c8-55b4-4bdf-b7bc-a5e137f869a2">
     <style>
       .colab-df-generate {
         background-color: #E8F0FE;
@@ -1590,7 +1515,7 @@ mengonversi kumpulan kalimat menjadi representasi vektor frekuensi kata dalam be
     <script>
       (() => {
       const buttonEl =
-        document.querySelector('#id_b97070f6-8d44-4933-9498-69565eb897de button.colab-df-generate');
+        document.querySelector('#id_4b2ba5c8-55b4-4bdf-b7bc-a5e137f869a2 button.colab-df-generate');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
@@ -1625,9 +1550,9 @@ menghitung dan menampilkan kata-kata dengan frekuensi tertinggi dari DataFrame, 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rank 1: . (Frequency: 16)
-Rank 2: morowali (Frequency: 6)
-Rank 3: hilirisasi (Frequency: 5)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rank 1: . (Frequency: 15)
+Rank 2: bahrain (Frequency: 11)
+Rank 3: indonesia (Frequency: 9)
 </pre></div>
 </div>
 </div>
